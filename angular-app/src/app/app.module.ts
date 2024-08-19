@@ -6,13 +6,15 @@ import { HeaderComponent } from './implementation/header/header.component';
 import { HomeComponent } from './implementation/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AnalyticsComponent } from './implementation/analytics/analytics.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    AnalyticsComponent 
+    AnalyticsComponent,
+    NgChartsModule  
 
   ],
   imports: [

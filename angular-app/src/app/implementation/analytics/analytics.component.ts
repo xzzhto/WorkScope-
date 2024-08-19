@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-analytics',
@@ -21,6 +22,32 @@ export class AnalyticsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // Загрузка данных из API может быть выполнена здесь
+    this.createCharts();
+  }
+
+  createCharts(): void {
+    new Chart('jobCategoryChart', {
+      type: 'bar',
+      data: {
+        labels: this.jobCategoryData.map(item => item.category),
+        datasets: [{
+          label: 'Количество вакансий',
+          data: this.jobCategoryData.map(item => item.jobCount),
+          backgroundColor: '#4A90E2'
+        }]
+      }
+    });
+    new Chart('salaryChart', {
+      type: 'line',
+      data: {
+        labels: this.salaryData.map(item => item.region),
+        datasets: [{
+          label: 'Средняя зарплата',
+          data: this.salaryData.map(item => item.averageSalary),
+          borderColor: '#FF9A8B',
+          fill: false
+        }]
+      }
+    });
   }
 }
