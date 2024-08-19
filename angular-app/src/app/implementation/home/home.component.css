@@ -1,0 +1,117 @@
+/* home.component.css */
+
+.home-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+  
+  .hero {
+    background-color: #F5F5F5;
+    color: #333;
+    text-align: center;
+    padding: 60px 20px;
+    box-shadow: inset 8px 8px 15px #C0C0C0, inset -8px -8px 15px #FFFFFF;
+    border-radius: 12px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .btn-primary {
+    background-color: #4A90E2;
+  }
+  
+  .btn-primary:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary {
+    background-color: #333;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #222;
+    transform: translateY(-2px);
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .feature {
+    background-color: #E0E0E0;
+    padding: 20px;
+    border-radius: 15px;
+    width: 30%;
+    margin: 10px;
+    box-shadow: 8px 8px 15px #C0C0C0, -8px -8px 15px #FFFFFF;
+  }
+  
+  .feature h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    font-size: 1em;
+    margin-bottom: 15px;
+  }
+  
+  .btn-info {
+    background-color: #4A90E2;
+    border: none;
+  }
+  
+  .btn-info:hover {
+    background-color: #357ABD;
+  }
+  
+  .footer {
+    background-color: #F5F5F5;
+    color: #333;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #E0E0E0;
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-links a {
+    color: #4A90E2;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  

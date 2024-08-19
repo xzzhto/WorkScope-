@@ -1,0 +1,39 @@
+<!-- analytics.component.html -->
+<div class="analytics-container">
+    <section class="hero">
+      <h1>Аналитика IT-рынка</h1>
+      <p>Получите актуальные данные и графики по различным аспектам IT-рынка.</p>
+    </section>
+  
+    <section class="charts">
+      <div class="chart">
+        <h2>График вакансий по категориям</h2>
+        <app-chart [data]="jobCategoryData"></app-chart>
+      </div>
+      <div class="chart">
+        <h2>Средние зарплаты по регионам</h2>
+        <app-chart [data]="salaryData"></app-chart>
+      </div>
+    </section>
+  
+    <section class="data-tables">
+      <h2>Таблицы данных</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Количество вакансий</th>
+            <th>Средняя зарплата</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of jobCategoryData">
+            <td>{{ item.category }}</td>
+            <td>{{ item.jobCount }}</td>
+            <td>{{ item.averageSalary | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  
