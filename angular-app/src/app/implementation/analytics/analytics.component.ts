@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Chart } from 'chart.js';
+import * as echarts from 'echarts';
 
 @Component({
   selector: 'app-analytics',
@@ -7,47 +7,52 @@ import { Chart } from 'chart.js';
   styleUrls: ['./analytics.component.css']
 })
 export class AnalyticsComponent implements OnInit {
-  jobCategoryData = [
-    { category: 'Разработчик', jobCount: 1200, averageSalary: 120000 },
-    { category: 'Тестировщик', jobCount: 800, averageSalary: 100000 },
-    { category: 'Дизайнер', jobCount: 500, averageSalary: 110000 }
-  ];
+  filters = {
+    category: 'all',
+    region: 'all',
+    experience: 'all'
+  };
 
-  salaryData = [
-    { region: 'Москва', averageSalary: 150000 },
-    { region: 'Санкт-Петербург', averageSalary: 120000 },
-    { region: 'Новосибирск', averageSalary: 100000 }
-  ];
+  jobCategoryChartOptions: any;
+  salaryChartOptions: any;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.createCharts();
+  ngOnInit() {
+    this.loadCharts();
   }
 
-  createCharts(): void {
-    new Chart('jobCategoryChart', {
-      type: 'bar',
-      data: {
-        labels: this.jobCategoryData.map(item => item.category),
-        datasets: [{
-          label: 'Количество вакансий',
-          data: this.jobCategoryData.map(item => item.jobCount),
-          backgroundColor: '#4A90E2'
-        }]
-      }
-    });
-    new Chart('salaryChart', {
-      type: 'line',
-      data: {
-        labels: this.salaryData.map(item => item.region),
-        datasets: [{
-          label: 'Средняя зарплата',
-          data: this.salaryData.map(item => item.averageSalary),
-          borderColor: '#FF9A8B',
-          fill: false
-        }]
-      }
-    });
+  loadCharts() {
+    this.jobCategoryChartOptions = {
+      title: { text: 'Вакансии по категориям' },
+      tooltip: {},
+      xAxis: {
+        type: 'category',
+        data: ['Разработка ПО', 'Дизайн', 'Анализ данных']
+      },
+      yAxis: { type: 'value' },
+      series: [{
+        data: [100, 50, 75],
+        type: 'bar'
+      }]
+    };
+
+    this.salaryChartOptions = {
+      title: { text: 'Средняя зарплата по категориям' },
+      tooltip: {},
+      xAxis: {
+        type: 'category',
+        data: ['Разработка ПО', 'Дизайн', 'Анализ данных']
+      },
+      yAxis: { type: 'value' },
+      series: [{
+        data: [120000, 90000, 100000],
+        type: 'line'
+      }]
+    };
+  }
+
+  applyFilters() {
+    // Логика для применения фильтров и обновления данных графиков
+    console.log('Фильтры применены:', this.filters);
+    this.loadCharts(); // Здесь вы должны обновить данные графиков на основе выбранных фильтров
   }
 }
