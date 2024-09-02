@@ -1,4 +1,4 @@
-package net.proselayte.jwtapp;
+package net.proselyte.jwtapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

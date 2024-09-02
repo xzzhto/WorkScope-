@@ -5,6 +5,9 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import java.util.List;
 
 @Entity
 @Table(name = "roles")
